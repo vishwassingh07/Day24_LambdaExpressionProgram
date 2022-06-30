@@ -40,10 +40,18 @@ namespace LambdaExpressionProgram
                 Console.WriteLine("Yes the person naming Vishwas is present in the list");
             }
 
-            Console.WriteLine("\nSkipping every person whose age is less than 60");
+            Console.WriteLine("\nSkipping every person whose age is less than 60 : ");
             foreach (Person person in personlist.FindAll(e => e.Age < 60))
             {
                 Console.WriteLine("Name : " + person.Name + "\t\tAge : " + person.Age);
+            }
+
+
+            Console.WriteLine("\nRemove Person Called 'Avinash' From List : ");
+            personlist.RemoveAll(e => e.Name == "Avinash");
+            if (personlist.TrueForAll(e => e.Name != "Avinash"))
+            {
+                Console.WriteLine("There is no one in the list called Avinash");
             }
         }
     }
