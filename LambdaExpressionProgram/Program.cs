@@ -29,6 +29,10 @@ namespace LambdaExpressionProgram
             {
                 Console.WriteLine("Name : " + person.Name + "\t\tAge : " + person.Age);
             }
+
+            Console.WriteLine("\nGetting avg age of all the people");
+            double avgAge = personlist.Average(e => e.Age);
+            Console.WriteLine("The avg age of all the people : " + avgAge);
         }
     }
 }
