@@ -18,21 +18,27 @@ namespace LambdaExpressionProgram
             personlist.Add(new Person("126662", "Ankit", "Bhoma", 14));
             
             
-            Console.WriteLine("Retrieving Top 2 aged person from the list less than 60 years");
+            Console.WriteLine("Retrieving Top 2 aged person from the list less than 60 years :");
             foreach (Person person in personlist.FindAll(e => (e.Age < 60)).Take(2).ToList())
             {
                 Console.WriteLine("Name : " + person.Name + "\t\tAge : " + person.Age);
             }
 
-            Console.WriteLine("\n Checking whether any one of them teenager or not");
+            Console.WriteLine("\nChecking whether any one of them teenager or not :");
             foreach (Person person in personlist.FindAll(e => (e.Age >= 13 && e.Age <= 18)))
             {
                 Console.WriteLine("Name : " + person.Name + "\t\tAge : " + person.Age);
             }
 
-            Console.WriteLine("\nGetting avg age of all the people");
+            Console.WriteLine("\nGetting avg age of all the people :");
             double avgAge = personlist.Average(e => e.Age);
             Console.WriteLine("The avg age of all the people : " + avgAge);
+
+            Console.WriteLine("\nchecking whether the person name 'Vishwas' is present or not :");
+            if (personlist.Exists(e => e.Name == "Vishwas"))
+            {
+                Console.WriteLine("Yes the person naming Vishwas is present in the list");
+            }
         }
     }
 }
